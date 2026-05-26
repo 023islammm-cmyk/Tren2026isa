@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Instagram Гид 2026 | Қазақша</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #E1306C;
+  --purple: #833AB4;
+  --orange: #F77737;
+  --yellow: #FCAF45;
+  --blue: #405DE6;
+  --green: #12C26B;
+  --black: #111111;
+  --gray: #666666;
+  --lightgray: #f4f4f4;
+  --white: #ffffff;
+  --grad: linear-gradient(90deg, #833AB4, #E1306C, #F77737);
+  --grad2: linear-gradient(135deg, #405DE6, #833AB4, #E1306C);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #efefef;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ─── TOP BAR ─── */
+.topbar {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #efefef;
+}
+.logo-top {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+.counter-top {
+  background: var(--black);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* ─── PROGRESS ─── */
+.progress-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  gap: 3px;
+  padding: 0 14px 10px;
+}
+.pseg {
+  flex: 1;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pseg.done { background: var(--black); }
+.pseg.active { background: #ddd; }
+.pseg.active .pfill {
+  height: 100%;
+  background: var(--black);
+  animation: pfillAnim 7s linear forwards;
+}
+@keyframes pfillAnim { from{width:0} to{width:100%} }
+
+/* ─── SLIDES ─── */
+.wrap {
+  width: 100%;
+  max-width: 480px;
+}
+.slide {
+  display: none;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 0 14px;
+  width: calc(100% - 28px);
+  min-height: 680px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  animation: slideIn 0.35s cubic-bezier(0.22,1,0.36,1);
+  flex-direction: column;
+}
+.slide.active { display: flex; }
+@keyframes slideIn {
+  from { opacity:0; transform: scale(0.97) translateY(16px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+
+/* ─── NAV ─── */
+.navrow {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px 20px;
+  max-width: 480px;
+  width: 100%;
+}
+.nbtn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-weight: 700;
+}
+.nbtn:active { transform: scale(0.96); }
+.nbtn-prev { background: #111; color: white; }
+.nbtn-next {
+  background: var(--grad);
+  color: white;
+}
+
+/* ════════════════════════════
+   SHARED COMPONENTS
+════════════════════════════ */
+.tag {
+  display: inline-block;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.tag-pink { background: rgba(225,48,108,0.1); color: var(--pink); }
+.tag-purple { background: rgba(131,58,180,0.1); color: var(--purple); }
+.tag-green { background: rgba(18,194,107,0.1); color: var(--green); }
+.tag-orange { background: rgba(247,119,55,0.1); color: var(--orange); }
+.tag-blue { background: rgba(64,93,230,0.1); color: var(--blue); }
+.tag-black { background: #111; color: white; }
+
+.big-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1.05;
+  color: var(--black);
+  letter-spacing: -1px;
+}
+.big-h .grad { background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.big-h .grad2 { background: var(--grad2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.big-h .green { color: var(--green); -webkit-text-fill-color: var(--green); }
+.big-h .orange { color: var(--orange); -webkit-text-fill-color: var(--orange); }
+.big-h .pink { color: var(--pink); -webkit-text-fill-color: var(--pink); }
+.big-h .blue { color: var(--blue); -webkit-text-fill-color: var(--blue); }
+
+.sub-text {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.divider { height: 1px; background: #f0f0f0; margin: 16px 0; }
+
+/* card */
+.card {
+  background: var(--lightgray);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--black);
+  margin-bottom: 5px;
+}
+.card-desc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* stat pill */
+.stat-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--lightgray);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+.sp-label { font-size: 13px; color: var(--gray); font-weight: 600; }
+.sp-val {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* bar */
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.bar-lbl { font-size: 12px; color: var(--gray); font-weight: 600; min-width: 80px; }
+.bar-track { flex: 1; height: 10px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 5px; animation: growBar 1.2s ease forwards; }
+@keyframes growBar { from{width:0} to{width:var(--w)} }
+.bar-val { font-family:'Unbounded',sans-serif; font-size:12px; font-weight:700; color:var(--black); min-width:36px; text-align:right; }
+
+/* numbered step */
+.step-item { display:flex; gap:14px; align-items:flex-start; padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+.step-num {
+  width:36px; height:36px; border-radius:10px;
+  background: var(--black);
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900; font-size: 14px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.step-body h4 { font-size:14px; font-weight:800; color:var(--black); margin-bottom:3px; }
+.step-body p { font-size:12px; color:var(--gray); line-height:1.5; }
+
+/* icon row */
+.icon-card { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0f0f0; }
+.icon-box { width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.ic-body h4 { font-size:13px; font-weight:800; color:var(--black); margin-bottom:2px; }
+.ic-body p { font-size:11px; color:var(--gray); line-height:1.5; }
+
+/* big number */
+.big-stat {
+  text-align:center;
+  padding: 20px;
+  background: var(--lightgray);
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.bsn {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bsl { font-size:13px; color:var(--gray); margin-top:4px; font-weight:600; }
+
+/* highlight box */
+.hbox {
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 10px;
+}
+.hbox-pink { background: rgba(225,48,108,0.07); border: 1.5px solid rgba(225,48,108,0.18); }
+.hbox-green { background: rgba(18,194,107,0.07); border: 1.5px solid rgba(18,194,107,0.18); }
+.hbox-orange { background: rgba(247,119,55,0.07); border: 1.5px solid rgba(247,119,55,0.18); }
+.hbox-purple { background: rgba(131,58,180,0.07); border: 1.5px solid rgba(131,58,180,0.18); }
+.hbox-blue { background: rgba(64,93,230,0.07); border: 1.5px solid rgba(64,93,230,0.18); }
+.hbox-black { background: #111; color:white; }
+.hbox-title { font-family:'Unbounded',sans-serif; font-weight:800; font-size:13px; margin-bottom:6px; }
+.hbox-text { font-size:12px; line-height:1.6; color:var(--gray); }
+.hbox-black .hbox-text { color:rgba(255,255,255,0.65); }
+.hbox-black .hbox-title { color:white; }
+
+/* timeline */
+.tl-item { display:flex; gap:14px; margin-bottom:0; }
+.tl-left { display:flex; flex-direction:column; align-items:center; }
+.tl-dot { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+.tl-line { width:2px; flex:1; background:#f0f0f0; min-height:36px; }
+.tl-body { flex:1; padding-bottom:16px; }
+.tl-month { font-family:'Unbounded',sans-serif; font-weight:900; font-size:15px; color:var(--black); margin-bottom:3px; }
+.tl-desc { font-size:12px; color:var(--gray); line-height:1.5; }
+.tl-badge { display:inline-block; font-family:'Unbounded',sans-serif; font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; margin-top:6px; }
+
+/* grid 2col */
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.g2card { background:var(--lightgray); border-radius:16px; padding:14px; }
+.g2icon { font-size:26px; margin-bottom:6px; }
+.g2title { font-family:'Unbounded',sans-serif; font-weight:800; font-size:12px; color:var(--black); margin-bottom:3px; line-height:1.2; }
+.g2sub { font-size:10px; color:var(--gray); line-height:1.4; }
+.g2badge { display:inline-block; font-family:'Unbounded',sans-serif; font-size:9px; font-weight:800; padding:2px 7px; border-radius:10px; margin-top:5px; }
+
+/* compare */
+.cmp-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+.cmp-bad { background:rgba(225,48,108,0.07); border:1.5px solid rgba(225,48,108,0.15); border-radius:14px; padding:12px; }
+.cmp-good { background:rgba(18,194,107,0.07); border:1.5px solid rgba(18,194,107,0.15); border-radius:14px; padding:12px; }
+.cmp-label { font-family:'Unbounded',sans-serif; font-size:9px; font-weight:800; margin-bottom:6px; letter-spacing:1px; }
+.cmp-bad .cmp-label { color:var(--pink); }
+.cmp-good .cmp-label { color:var(--green); }
+.cmp-text { font-size:12px; font-weight:700; color:var(--black); line-height:1.4; }
+
+/* phone mock */
+.phone {
+  width: 180px;
+  margin: 0 auto 16px;
+  background: #1a1a1a;
+  border-radius: 28px;
+  padding: 14px 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  position: relative;
+}
+.phone::before {
+  content:'';
+  position:absolute; top:8px; left:50%; transform:translateX(-50%);
+  width:50px; height:3px;
+  background:rgba(255,255,255,0.12);
+  border-radius:2px;
+}
+.ig-screen { background:white; border-radius:16px; overflow:hidden; }
+.ig-header { display:flex; justify-content:space-between; align-items:center; padding:8px 10px; border-bottom:1px solid #f0f0f0; }
+.ig-uname { font-size:10px; font-weight:800; color:black; }
+.ig-hicons { font-size:13px; display:flex; gap:6px; }
+.ig-av-row { display:flex; justify-content:space-between; align-items:flex-end; padding:0 10px; margin-top:-18px; }
+.ig-av { width:40px;height:40px;border-radius:50%;background:var(--grad);border:3px solid white;display:flex;align-items:center;justify-content:center;font-size:16px;color:white; }
+.ig-edit { font-size:7px;background:#f0f0f0;padding:3px 6px;border-radius:5px;font-weight:700;color:black; }
+.ig-bio { padding:5px 10px; }
+.ig-bname { font-size:9px;font-weight:800;color:black; }
+.ig-btext { font-size:7px;color:#555;margin-top:2px;line-height:1.5; }
+.ig-stats { display:flex;justify-content:space-around;padding:7px 10px;border-top:1px solid #f0f0f0;margin-top:4px; }
+.ig-si { text-align:center; }
+.ig-sn { font-size:9px;font-weight:900;color:black; }
+.ig-sl { font-size:6px;color:#888; }
+.ig-hl { display:flex;gap:8px;padding:5px 10px 8px; }
+.ig-hli { display:flex;flex-direction:column;align-items:center;gap:2px; }
+.ig-hlc { width:32px;height:32px;border-radius:50%;background:var(--grad);padding:2px; }
+.ig-hlin { width:100%;height:100%;border-radius:50%;background:#f0f0f0;border:1.5px solid white; }
+.ig-hll { font-size:6px;color:#333;font-weight:700; }
+
+/* IG gradient border */
+.ig-avatar-ring {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--grad);
+  padding: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ig-avatar-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+/* ════════ SLIDE-SPECIFIC ════════ */
+.pad { padding: 28px 24px; }
+.padx { padding: 0 24px; }
+
+/* === COVER SLIDE === */
+.cover-top {
+  background: var(--black);
+  padding: 32px 24px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-top::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(circle at 70% 30%, rgba(131,58,180,0.4) 0%, rgba(225,48,108,0.3) 50%, transparent 70%);
+}
+.cover-ig-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 14px;
+  position: relative;
+  z-index:2;
+}
+.cover-h {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1;
+  color: white;
+  position: relative;
+  z-index:2;
+  letter-spacing: -1px;
+}
+.cover-h .cg { background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.cover-year {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 3px;
+  margin-top: 10px;
+  position:relative;z-index:2;
+}
+.cover-body { padding: 24px 24px; flex:1; }
+.cover-stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:20px; }
+.cs-item { background:var(--lightgray); border-radius:14px; padding:14px 10px; text-align:center; }
+.cs-num { font-family:'Unbounded',sans-serif; font-weight:900; font-size:22px; color:var(--black); line-height:1; }
+.cs-label { font-size:9px; color:var(--gray); margin-top:3px; font-weight:700; }
+.cover-tag-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+.ctag { font-family:'Unbounded',sans-serif; font-size:9px; font-weight:700; padding:5px 10px; border-radius:20px; background:var(--lightgray); color:var(--gray); }
+
+/* chart bars vertical */
+.vchart { display:flex; align-items:flex-end; gap:5px; height:90px; }
+.vc-col { display:flex; flex-direction:column; align-items:center; gap:3px; flex:1; }
+.vc-bar { width:100%; border-radius:6px 6px 0 0; animation: growUp 1.2s ease forwards; transform-origin:bottom; }
+@keyframes growUp { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+.vc-lbl { font-size:8px; color:var(--gray); font-weight:700; }
+.vc-val { font-family:'Unbounded',sans-serif; font-size:9px; font-weight:900; color:var(--black); }
+
+/* IG functions */
+.func-card {
+  display:flex; gap:12px; padding:12px 16px;
+  background:var(--lightgray); border-radius:14px; margin-bottom:8px;
+  align-items:center;
+}
+.fc-icon { font-size:24px; min-width:32px; }
+.fc-body {}
+.fc-name { font-family:'Unbounded',sans-serif; font-size:12px; font-weight:800; color:var(--black); margin-bottom:2px; }
+.fc-desc { font-size:11px; color:var(--gray); line-height:1.4; }
+.fc-power { font-family:'Unbounded',sans-serif; font-size:10px; font-weight:800; margin-top:3px; }
+
+/* mindset card */
+.ms-box { border-radius:16px; padding:14px 16px; margin-bottom:8px; }
+.ms-label { font-family:'Unbounded',sans-serif; font-size:9px; font-weight:800; letter-spacing:1.5px; margin-bottom:6px; }
+.ms-text { font-size:14px; font-weight:800; color:var(--black); line-height:1.3; }
+.ms-bad { background:rgba(225,48,108,0.07); border:1.5px solid rgba(225,48,108,0.15); }
+.ms-bad .ms-label { color:var(--pink); }
+.ms-good { background:rgba(18,194,107,0.07); border:1.5px solid rgba(18,194,107,0.15); }
+.ms-good .ms-label { color:var(--green); }
+.ms-arrow { text-align:center; font-size:20px; margin:2px 0; }
+
+/* final */
+.final-top { background:var(--black); padding:36px 24px 28px; text-align:center; }
+.final-emoji { font-size:56px; display:block; margin-bottom:12px; }
+.final-h { font-family:'Unbounded',sans-serif; font-weight:900; font-size:36px; color:white; line-height:1; letter-spacing:-1px; }
+.final-h .cg { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.final-body { padding:24px; }
+.final-stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:20px; }
+.fs-item { background:var(--lightgray); border-radius:14px; padding:14px 10px; text-align:center; }
+.fs-num { font-family:'Unbounded',sans-serif; font-weight:900; font-size:20px; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
+.fs-lbl { font-size:9px; color:var(--gray); margin-top:3px; font-weight:700; line-height:1.3; }
+.restart-btn {
+  width:100%; padding:16px; border:none; border-radius:16px;
+  background:var(--black); color:white;
+  font-family:'Unbounded',sans-serif; font-weight:800; font-size:14px;
+  cursor:pointer; margin-bottom:10px;
+  transition:all 0.2s;
+}
+.restart-btn:hover { transform:scale(1.02); }
+.final-note { font-size:11px; color:var(--gray); text-align:center; }
+
+/* quote */
+.quote-box {
+  background: var(--black);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 12px 0;
+  position: relative;
+}
+.quote-mark { font-size:40px; color:rgba(255,255,255,0.1); font-family:serif; line-height:1; }
+.quote-text { font-family:'Unbounded',sans-serif; font-weight:800; font-size:16px; color:white; line-height:1.3; margin-top:-8px; }
+.quote-sub { font-size:11px; color:rgba(255,255,255,0.5); margin-top:8px; }
+
+/* trend pill */
+.trend-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--lightgray); border-radius:100px; padding:8px 14px;
+  margin:3px; font-size:12px; font-weight:700; color:var(--black);
+}
+.tp-dot { width:8px; height:8px; border-radius:50%; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="logo-top">INSTA ГИДІ 2026</div>
+  <div class="counter-top" id="ctr">1/30</div>
+</div>
+<div class="progress-wrap" id="pw"></div>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════
+  SLIDE 1 — COVER
+══════════════════════════════════ -->
+<div class="slide active" data-s="1">
+  <div class="cover-top">
+    <span class="cover-ig-icon">📸</span>
+    <div class="cover-h">INSTAGRAM<br><span class="cg">ЖҮРГІЗУ</span><br>ГИДІ</div>
+    <div class="cover-year">ҚАЗАҚСТАН · 2026 · ТОЛЫҚ НҰСҚАУЛЫҚ</div>
+  </div>
+  <div class="cover-body">
+    <div class="sub-text">Нолден бастап — табысқа дейін. Қазақ менталитетіне сай нақты жолнұсқа.</div>
+    <div class="cover-stats">
+      <div class="cs-item"><div class="cs-num">30</div><div class="cs-label">СЛАЙД</div></div>
+      <div class="cs-item"><div class="cs-num">7М+</div><div class="cs-label">ҚЗ ҚОЛД.</div></div>
+      <div class="cs-item"><div class="cs-num">∞</div><div class="cs-label">МҮМКІН.</div></div>
+    </div>
+    <div class="cover-tag-row">
+      <span class="ctag">🚀 ТРЕНД 2026</span>
+      <span class="ctag">💰 МОНЕТИЗАЦИЯ</span>
+      <span class="ctag">📱 РИЛС СТРАТЕГИЯ</span>
+      <span class="ctag">🧠 ПСИХОЛОГИЯ</span>
+      <span class="ctag">📊 АНАЛИТИКА</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 2 — НЕГЕ ИНСТАГРАМ?
+══════════════════════════════════ -->
+<div class="slide" data-s="2">
+  <div class="pad">
+    <span class="tag tag-pink">НЕЛІКТЕН?</span>
+    <div class="big-h">ИНСТАГРАМДЫ<br><span class="grad">НЕГЕ</span><br>ЖҮРГІЗУ КЕРЕК?</div>
+    <div class="sub-text">2026 жылы инстаграм — тек сурет платформасы емес</div>
+    <div class="divider"></div>
+    <div class="step-item">
+      <div class="step-num">01</div>
+      <div class="step-body"><h4>💰 АҚША ТАБУ МҮМКІНДІГІ</h4><p>Реклама, курс, өнім арқылы айына миллион теңгеге дейін. Жалақы емес — өз бизнесің.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">02</div>
+      <div class="step-body"><h4>🌐 ЖЕКЕ БРЕНД ЖАСАУ</h4><p>10К фоллоуер — кез келген резюмеден күшті. Сен "мамансың" деп ешкім дәлел сұрамайды.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">03</div>
+      <div class="step-body"><h4>🤝 БАЙЛАНЫС & КЛИЕНТТЕР</h4><p>Бизнес серіктер, тапсырыс берушілер, өз жолыңдағы адамдар — барлығы инстаграмда.</p></div>
+    </div>
+    <div class="step-item" style="border-bottom:none">
+      <div class="step-num">04</div>
+      <div class="step-body"><h4>📚 БІЛІМДІ ТАРАТУ</h4><p>Маман екеніңді дәлелдеу. Адамдарға пайдалы болып — ақша мен даңқ бірге келеді.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 3 — ҚАЗАҚСТАН СТАТИСТИКА
+══════════════════════════════════ -->
+<div class="slide" data-s="3">
+  <div class="pad">
+    <span class="tag tag-green">ҚАЗАҚСТАН ДЕРЕКТЕРІ 2026</span>
+    <div class="big-h">ҚЗ-ДА<br><span class="green">ИНСТАГРАМ</span><br>ҚАНШАЛЫҚТЫ?</div>
+  </div>
+  <div class="padx">
+    <div class="big-stat">
+      <div class="bsn">7.2М</div>
+      <div class="bsl">Қазақстандықтар Instagram қолданады (2026)</div>
+    </div>
+    <div class="stat-pill"><span class="sp-label">Күнделікті белсенді</span><span class="sp-val">3.8М</span></div>
+    <div class="stat-pill"><span class="sp-label">Күніне уақыт жұмсайды</span><span class="sp-val">54 МИН</span></div>
+    <div class="stat-pill"><span class="sp-label">18–34 жас аралығы</span><span class="sp-val">69%</span></div>
+    <div class="stat-pill"><span class="sp-label">IG арқылы сатып алу</span><span class="sp-val">63%</span></div>
+    <div style="height:10px"></div>
+    <div class="bar-row"><span class="bar-lbl">Алматы</span><div class="bar-track"><div class="bar-fill" style="--w:88%;background:var(--grad)"></div></div><span class="bar-val">88%</span></div>
+    <div class="bar-row"><span class="bar-lbl">Астана</span><div class="bar-track"><div class="bar-fill" style="--w:80%;background:var(--grad)"></div></div><span class="bar-val">80%</span></div>
+    <div class="bar-row"><span class="bar-lbl">Шымкент</span><div class="bar-track"><div class="bar-fill" style="--w:66%;background:var(--grad)"></div></div><span class="bar-val">66%</span></div>
+    <div class="bar-row"><span class="bar-lbl">Өңірлер</span><div class="bar-track"><div class="bar-fill" style="--w:50%;background:var(--grad)"></div></div><span class="bar-val">50%</span></div>
+  </div>
+  <div style="height:20px"></div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 4 — 2026 ТРЕНДТЕР
+══════════════════════════════════ -->
+<div class="slide" data-s="4">
+  <div class="pad">
+    <span class="tag tag-orange">🔥 ЖАҢА ТРЕНД 2026</span>
+    <div class="big-h">2026 ЖЫЛЫ<br><span class="orange">НЕ</span> ӨЗГЕРДІ?</div>
+    <div class="sub-text">Instagram алгоритмі мен форматтары түбегейлі жаңарды</div>
+    <div class="divider"></div>
+    <div class="hbox hbox-orange">
+      <div class="hbox-title" style="color:var(--orange)">📹 REELS — БІРІНШІ ОРЫН САҚТАДЫ</div>
+      <div class="hbox-text">2026-да Reels — аудитория тартудың №1 жолы. 15–90 сек форматы. AI-assisted editing кіріктірілді.</div>
+    </div>
+    <div class="hbox hbox-purple">
+      <div class="hbox-title" style="color:var(--purple)">🤖 AI КОНТЕНТ ДЕТЕКТОРЫ</div>
+      <div class="hbox-text">Instagram AI генерациялаған контентті белгілейді. Шынайы, адами контент — алгоритм приоритеті.</div>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title" style="color:var(--blue)">📡 BROADCAST CHANNELS КЕҢЕЙДІ</div>
+      <div class="hbox-text">Тікелей аудиториямен байланыс. Монетизацияның жаңа жолы — эксклюзив контент арнасы.</div>
+    </div>
+    <div class="hbox hbox-green">
+      <div class="hbox-title" style="color:var(--green)">🛒 IG SHOP — ҚАЗАҚСТАНДА ӨСТІ</div>
+      <div class="hbox-text">Постан тікелей сату мүмкіндігі. 2026-да Қазақстандықтардың 63% IG арқылы сатып алады.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 5 — АҚША ТАБУ ЖОЛДАРЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="5">
+  <div class="pad">
+    <span class="tag tag-pink">МОНЕТИЗАЦИЯ</span>
+    <div class="big-h">ИНСТАГРАМНАН<br><span class="grad">АҚША</span><br>ТАБУДЫҢ ЖОЛЫ</div>
+  </div>
+  <div class="padx">
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">📢</div>
+      <div class="ic-body"><h4>ЖАРНАМА (РЕКЛАМА)</h4><p>10К фоллоуер → 30–150К₸/реклама<br>100К+ → 500К–2М₸/реклама</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🎓</div>
+      <div class="ic-body"><h4>ОНЛАЙН КУРС / КОУЧИНГ</h4><p>Білімді сат. Айына 200К–5М₸ мүмкіндігі. Ең тиімді монетизация жолы.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">🛍️</div>
+      <div class="ic-body"><h4>ӨНІМ / ҚЫЗМЕТ САТУ</h4><p>Digital products, handmade, SMM, дизайн. IG Shop арқылы тікелей сат.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">⭐</div>
+      <div class="ic-body"><h4>CLOSE FRIENDS / VIP ТОП</h4><p>Ақылы контент арнасы. Айына тұрақты кіріс. 2026 трендінің жаңа жолы.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">🤝</div>
+      <div class="ic-body"><h4>AFFILIATE & АМБАССАДОР</h4><p>Бренд өнімін жылдам ұсыну. Сатудан % алу. Жалақысыз пассив табыс.</p></div>
+    </div>
+    <div class="hbox hbox-black" style="margin-top:10px">
+      <div class="hbox-title">💡 КІРІС ДЕҢГЕЙІ</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+        <div class="bar-row" style="margin:0"><span class="bar-lbl" style="color:rgba(255,255,255,0.6);min-width:90px">1К–10К</span><div class="bar-track"><div class="bar-fill" style="--w:22%;background:var(--grad)"></div></div><span class="bar-val" style="color:white">~50К₸</span></div>
+        <div class="bar-row" style="margin:0"><span class="bar-lbl" style="color:rgba(255,255,255,0.6);min-width:90px">10К–50К</span><div class="bar-track"><div class="bar-fill" style="--w:50%;background:var(--grad)"></div></div><span class="bar-val" style="color:white">~300К₸</span></div>
+        <div class="bar-row" style="margin:0"><span class="bar-lbl" style="color:rgba(255,255,255,0.6);min-width:90px">50К–200К</span><div class="bar-track"><div class="bar-fill" style="--w:75%;background:var(--grad)"></div></div><span class="bar-val" style="color:white">~1М₸</span></div>
+        <div class="bar-row" style="margin:0"><span class="bar-lbl" style="color:rgba(255,255,255,0.6);min-width:90px">200К+</span><div class="bar-track"><div class="bar-fill" style="--w:100%;background:var(--grad)"></div></div><span class="bar-val" style="color:white">5М+₸</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="height:16px"></div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 6 — АККАУНТ АШУ
+══════════════════════════════════ -->
+<div class="slide" data-s="6">
+  <div class="pad">
+    <span class="tag tag-black">БӨЛІМ 2 · АККАУНТ</span>
+    <div class="big-h">ИНСТАГРАМДЫ<br><span class="grad">ДҰРЫС</span><br>ҚАЛАй АШУ?</div>
+    <div class="sub-text">Профиліңнің алғашқы 5 секунды бәрін шешеді</div>
+    <div class="divider"></div>
+    <div class="phone">
+      <div class="ig-screen">
+        <div class="ig-header"><span class="ig-uname">@sen.niche.kz</span><div class="ig-hicons">☰ ➕</div></div>
+        <div style="height:60px;background:linear-gradient(135deg,#833AB4,#E1306C,#F77737)"></div>
+        <div class="ig-av-row">
+          <div class="ig-av">👤</div>
+          <div class="ig-edit">Профильді өңдеу</div>
+        </div>
+        <div class="ig-bio">
+          <div class="ig-bname">Есімің | Мамандығың</div>
+          <div class="ig-btext">🎯 Бағытың 1 сөйлем<br>📍 Алматы | Онлайн<br>🔗 Сілтеме</div>
+        </div>
+        <div class="ig-stats">
+          <div class="ig-si"><div class="ig-sn">48</div><div class="ig-sl">посты</div></div>
+          <div class="ig-si"><div class="ig-sn">2.1К</div><div class="ig-sl">фоллоуер</div></div>
+          <div class="ig-si"><div class="ig-sn">310</div><div class="ig-sl">подписка</div></div>
+        </div>
+        <div class="ig-hl">
+          <div class="ig-hli"><div class="ig-hlc"><div class="ig-hlin"></div></div><div class="ig-hll">Мен туралы</div></div>
+          <div class="ig-hli"><div class="ig-hlc"><div class="ig-hlin"></div></div><div class="ig-hll">Жұмыс</div></div>
+          <div class="ig-hli"><div class="ig-hlc"><div class="ig-hlin"></div></div><div class="ig-hll">Отзыв</div></div>
+          <div class="ig-hli"><div class="ig-hlc"><div class="ig-hlin"></div></div><div class="ig-hll">FAQ</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">🔄</div>
+      <div class="ic-body"><h4>КӘСІБИ АККАУНТ АШ</h4><p>Settings → Account → Switch to Professional → Creator немесе Business таңда</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">📸</div>
+      <div class="ic-body"><h4>НАҚТЫ ФОТОҢДЫ ҚОЙ</h4><p>Айқын, бет-әлпетің көрінетін фото. Логотип емес — адам! 2026-да аутентичность маңызды.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">✍️</div>
+      <div class="ic-body"><h4>БИО = САТУ МӘТІНІ</h4><p>Кім екенің + кімге помогайсың + CTA (қоңырау шалу). 150 символ — мүмкіндік.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 7 — АТ ҚОЮ ФОРМУЛАСЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="7">
+  <div class="pad">
+    <span class="tag tag-purple">МАҢЫЗДЫ</span>
+    <div class="big-h">АККАУНТ<br><span class="grad2">АТЫН</span><br>ТАҢДАУ</div>
+    <div class="sub-text">Аттың формуласы — есте қалатын, табылатын, сенімді</div>
+    <div class="divider"></div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ ҚАТЕ</div><div class="cmp-text">@user84736291</div><div style="font-size:10px;color:var(--gray);margin-top:4px">Сандар — кәсіпқойлықты жояды</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ДҰРЫС</div><div class="cmp-text">@asel.psiholog</div><div style="font-size:10px;color:var(--gray);margin-top:4px">Есім + мамандық — анық</div></div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ ҚАТЕ</div><div class="cmp-text">@asel.beautiful.girl.kz.official</div><div style="font-size:10px;color:var(--gray);margin-top:4px">Тым ұзын — ешкім табпайды</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ДҰРЫС</div><div class="cmp-text">@cook.kz.almaty</div><div style="font-size:10px;color:var(--gray);margin-top:4px">Бағыт + қала — нақты</div></div>
+    </div>
+    <div class="hbox hbox-black" style="margin-top:8px">
+      <div class="hbox-title">🔑 АТ ФОРМУЛАСЫ</div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <span style="background:rgba(255,255,255,0.1);color:white;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700">Есімің</span>
+        <span style="color:rgba(255,255,255,0.4);font-size:18px;font-weight:900">+</span>
+        <span style="background:rgba(255,255,255,0.1);color:white;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700">Мамандық</span>
+        <span style="color:rgba(255,255,255,0.4);font-size:18px;font-weight:900">+</span>
+        <span style="background:rgba(255,255,255,0.1);color:white;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700">.kz</span>
+      </div>
+      <div style="margin-top:12px;font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">= @marat.finans.kz ✅</div>
+    </div>
+    <div class="hbox hbox-orange" style="margin-top:8px">
+      <div class="hbox-title" style="color:var(--orange)">⚠️ 2026 ЕСКЕРТУ</div>
+      <div class="hbox-text">Инстаграм атыңды AI арқылы іздейді — keyword бар болса табылу мүмкіндігің 3x артады</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 8 — БАҒЫТ ТАҢДАУ
+══════════════════════════════════ -->
+<div class="slide" data-s="8">
+  <div class="pad">
+    <span class="tag tag-green">БӨЛІМ 3 · БАҒЫТ</span>
+    <div class="big-h">ҚАНДАЙ<br><span class="green">БАҒЫТТА</span><br>ЖҮРГІЗУ?</div>
+    <div class="sub-text">2026 жылдың ең табысты нишелері</div>
+    <div class="divider"></div>
+  </div>
+  <div class="padx">
+    <div class="grid2">
+      <div class="g2card"><div class="g2icon">💰</div><div class="g2title">Қаржы & Бизнес</div><div class="g2sub">Инвестиция, стартап, пассив табыс</div><span class="g2badge" style="background:rgba(18,194,107,0.15);color:var(--green)">ЖОҒАРЫ ТАБЫС</span></div>
+      <div class="g2card"><div class="g2icon">🧠</div><div class="g2title">Психология & Дамыту</div><div class="g2sub">Қатынас, стресс, өзін-өзі дамыту</div><span class="g2badge" style="background:rgba(64,93,230,0.15);color:var(--blue)">ҮЛКЕН СЕНІМ</span></div>
+      <div class="g2card"><div class="g2icon">🍽️</div><div class="g2title">Тағам & Рецепт</div><div class="g2sub">Қазақ тағамдары, диета, пісіру</div><span class="g2badge" style="background:rgba(247,119,55,0.15);color:var(--orange)">ҮЛКЕН АУДИТ.</span></div>
+      <div class="g2card"><div class="g2icon">🏋️</div><div class="g2title">Фитнес & Денсаулық</div><div class="g2sub">Жаттығу, дұрыс тамақтану</div><span class="g2badge" style="background:rgba(225,48,108,0.15);color:var(--pink)">ЖЫЛДАМ ӨСУ</span></div>
+      <div class="g2card"><div class="g2icon">✈️</div><div class="g2title">Саяхат & Туризм</div><div class="g2sub">Қазақстан, шетел сапарлары</div><span class="g2badge" style="background:rgba(131,58,180,0.15);color:var(--purple)">РЕКЛАМА КӨП</span></div>
+      <div class="g2card"><div class="g2icon">🤖</div><div class="g2title">AI & Технология</div><div class="g2sub">ChatGPT, нейросеть, автоматиз.</div><span class="g2badge" style="background:rgba(18,194,107,0.15);color:var(--green)">🔥 2026 ТРЕНД</span></div>
+      <div class="g2card"><div class="g2icon">👗</div><div class="g2title">Мода & Сән</div><div class="g2sub">Стиль, киім, косметика</div><span class="g2badge" style="background:rgba(225,48,108,0.15);color:var(--pink)">КОЛЛАБ КӨП</span></div>
+      <div class="g2card"><div class="g2icon">📚</div><div class="g2title">Білім & Тіл</div><div class="g2sub">Ағылшын, орыс, корей тілдері</div><span class="g2badge" style="background:rgba(64,93,230,0.15);color:var(--blue)">ТҰРАҚТЫ ӨСУ</span></div>
+    </div>
+    <div class="hbox hbox-black" style="margin-top:12px">
+      <div class="hbox-title">⚡ АЛТЫН ЕРЕЖЕ</div>
+      <div class="hbox-text">Бірден 3–4 нише емес — 1 БАҒЫТҚА ФОКУСТАН. Сол бағытта маман бол.</div>
+    </div>
+  </div>
+  <div style="height:16px"></div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 9 — КҮНДЕЛІКТІ БЕЛСЕНДІЛІК
+══════════════════════════════════ -->
+<div class="slide" data-s="9">
+  <div class="pad">
+    <span class="tag tag-orange">БЕЛСЕНДІЛІК</span>
+    <div class="big-h">КҮНДЕЛІКТІ<br><span class="orange">ЖҰМЫС</span><br>ЭФФЕКТІ</div>
+    <div class="sub-text">Алгоритм сенің белсенділігіңді бақылайды</div>
+    <div class="divider"></div>
+    <div style="background:var(--lightgray);border-radius:16px;padding:16px;margin-bottom:12px">
+      <div style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:800;color:var(--gray);letter-spacing:1px;margin-bottom:12px">КЕЙ БЕЛСЕНДІ УАҚЫТ (ҚЗ)</div>
+      <div class="vchart">
+        <div class="vc-col"><div class="vc-val">—</div><div class="vc-bar" style="height:10px;background:#eee;animation-delay:.0s"></div><div class="vc-lbl">6:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔅</div><div class="vc-bar" style="height:25px;background:rgba(225,48,108,.2);animation-delay:.1s"></div><div class="vc-lbl">8:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔅</div><div class="vc-bar" style="height:35px;background:rgba(225,48,108,.35);animation-delay:.15s"></div><div class="vc-lbl">12:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔆</div><div class="vc-bar" style="height:55px;background:var(--pink);animation-delay:.2s"></div><div class="vc-lbl">18:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔥</div><div class="vc-bar" style="height:80px;background:var(--grad);animation-delay:.25s"></div><div class="vc-lbl">20:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔥</div><div class="vc-bar" style="height:75px;background:var(--grad);animation-delay:.3s"></div><div class="vc-lbl">21:00</div></div>
+        <div class="vc-col"><div class="vc-val">🔆</div><div class="vc-bar" style="height:50px;background:rgba(225,48,108,.4);animation-delay:.35s"></div><div class="vc-lbl">22:00</div></div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">☀️</div>
+      <div class="ic-body"><h4>ТАҢЕРТЕҢ 8–9</h4><p>Stories жариялау — "Сәлем" деп бастату. Тәуліктік белсенділіктің басы.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">🌤️</div>
+      <div class="ic-body"><h4>КҮНДІЗ 12–14</h4><p>Комменттерге жауап, DM тексеру. Алгоритм белсенділікті бағалайды.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">🌆</div>
+      <div class="ic-body"><h4>КЕШКЕ 18–21 ⚡ АЛТЫН УАҚЫТ</h4><p>Рилс жариялау, Stories, Live. ҚЗ аудиториясы осы уақытта ең белсенді.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 10 — РИЛС ФОРМУЛАСЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="10">
+  <div class="pad">
+    <span class="tag tag-pink">ВИРУСТЫ КОНТЕНТ</span>
+    <div class="big-h">РИЛС<br><span class="grad">ФОРМУЛАСЫ</span><br>2026</div>
+    <div class="sub-text">Кез келген вирусты видеоның 4 бөлімі</div>
+    <div class="divider"></div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--pink)">1</div>
+      <div class="step-body"><h4>🎣 HOOK — алғашқы 3 секунд</h4><p>"Мынаны білмесең — ақша таба алмайсың" немесе күтпеген сурет/сөз. Адамды ТОҚТАТУ.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--orange)">2</div>
+      <div class="step-body"><h4>📌 ПРОБЛЕМА — 3–8 сек</h4><p>Аудиторияның ауыртатын жерін айт. "Мен де солай болдым..." — эмоциялық байланыс.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--purple)">3</div>
+      <div class="step-body"><h4>💡 ШЕШІМ — 8–60 сек</h4><p>Нақты ақпарат, тізім, жол. Адамды "САҚТА" деп итермелейтін мазмұн.</p></div>
+    </div>
+    <div class="step-item" style="border:none">
+      <div class="step-num" style="background:var(--green)">4</div>
+      <div class="step-body"><h4>📣 CTA — соңы</h4><p>"Сақта", "Достарыңа жібер", "Пікіріңді жаз" — нақты БІР әрекетке шақыр.</p></div>
+    </div>
+    <div class="hbox hbox-pink">
+      <div class="hbox-title" style="color:var(--pink)">🔥 ЖҰМЫС ЖАСАЙТЫН HOOK МЫСАЛДАРЫ</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">
+        <div style="background:rgba(225,48,108,0.08);border-left:3px solid var(--pink);border-radius:0 8px 8px 0;padding:8px 10px;font-size:12px;font-style:italic;color:var(--black)">"Инстаграмда жылына 1 млн таппаудың себебі бұл..."</div>
+        <div style="background:rgba(225,48,108,0.08);border-left:3px solid var(--pink);border-radius:0 8px 8px 0;padding:8px 10px;font-size:12px;font-style:italic;color:var(--black)">"10К подписчик жинаудың 3 жолы — ешкім айтпаған"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 11 — КОММЕНТТЕР
+══════════════════════════════════ -->
+<div class="slide" data-s="11">
+  <div class="pad">
+    <span class="tag tag-green">ENGAGEMENT</span>
+    <div class="big-h">КОММЕНТКЕ<br><span class="green">ЖАУАП</span><br>БЕРУДІҢ КҮШІ</div>
+    <div class="divider"></div>
+    <div style="background:var(--lightgray);border-radius:16px;overflow:hidden;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #e8e8e8">
+        <span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:800;color:var(--gray)">КОММЕНТТЕР</span>
+        <span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:900;color:var(--green)">124</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:12px 14px;border-bottom:1px solid #e8e8e8;align-items:flex-start">
+        <div style="width:30px;height:30px;border-radius:50%;background:rgba(225,48,108,0.15);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">👩</div>
+        <div><div style="font-size:11px;font-weight:800;color:black">aizat.almaty</div><div style="font-size:11px;color:var(--gray);margin-top:2px">Рахмет! Осыны іздеп жүрдім 🙌</div><div style="font-family:'Unbounded',sans-serif;font-size:10px;color:var(--pink);margin-top:5px;font-weight:700;cursor:pointer">↩ ЖАУАП БЕР</div></div>
+      </div>
+      <div style="display:flex;gap:10px;padding:12px 14px;background:rgba(18,194,107,0.05);align-items:flex-start">
+        <div style="width:30px;height:30px;border-radius:50%;background:rgba(18,194,107,0.15);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">😊</div>
+        <div><div style="font-size:11px;font-weight:800;color:var(--green)">Сен (аккаунт иесі)</div><div style="font-size:11px;color:var(--gray);margin-top:2px">@aizat.almaty Рахмет! Келесіде тереңірек айтамын 🔥 Подписка болыңыз!</div></div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">⚡</div>
+      <div class="ic-body"><h4>АЛҒАШҚЫ 60 МИН — АЛТЫН</h4><p>Пост жарияланған соң 60 мин ішінде барлық комментке жауап бер. Алгоритм белсенділікті көреді.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">💬</div>
+      <div class="ic-body"><h4>"РАХМЕТ" ЖЕТКІЛІКСІЗ</h4><p>Сұрақ қой, қосымша ақпарат бер. "Сен де осыны сынадың ба?" — диалог жаса.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">🏃</div>
+      <div class="ic-body"><h4>БАСҚАЛАРДЫҢ ПОСТЫНА КОММЕНТТE</h4><p>Үлкен аккаунттарда мазмұнды комментте → олардың аудиториясы сені байқайды.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 12 — 1 ЖЫЛ ЕРЕЖЕСІ
+══════════════════════════════════ -->
+<div class="slide" data-s="12">
+  <div class="pad">
+    <span class="tag tag-orange">ШЫДАМДЫЛЫҚ</span>
+    <div class="big-h">1 ЖЫЛ<br><span class="orange">ЕРЕЖЕСІ</span><br>НЕНІ БЕРЕДІ?</div>
+    <div class="sub-text">Типтік өсу — ешкімде бірден болмаған</div>
+    <div class="divider"></div>
+    <div style="background:var(--lightgray);border-radius:16px;padding:16px;margin-bottom:14px">
+      <div style="font-family:'Unbounded',sans-serif;font-size:10px;font-weight:800;color:var(--gray);letter-spacing:1px;margin-bottom:10px">ФОЛЛОУЕР ӨСУ ГРАФИГІ</div>
+      <div class="vchart" style="height:80px">
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">0</div><div class="vc-bar" style="height:2px;background:#ddd"></div><div class="vc-lbl">1ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">50</div><div class="vc-bar" style="height:8px;background:rgba(131,58,180,0.3)"></div><div class="vc-lbl">2ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">200</div><div class="vc-bar" style="height:14px;background:rgba(131,58,180,0.4)"></div><div class="vc-lbl">3ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">1К</div><div class="vc-bar" style="height:22px;background:rgba(225,48,108,0.5)"></div><div class="vc-lbl">5ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">5К</div><div class="vc-bar" style="height:38px;background:rgba(225,48,108,0.7)"></div><div class="vc-lbl">7ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">15К</div><div class="vc-bar" style="height:56px;background:var(--pink)"></div><div class="vc-lbl">10ай</div></div>
+        <div class="vc-col"><div class="vc-val" style="font-size:8px">50К+</div><div class="vc-bar" style="height:78px;background:var(--grad)"></div><div class="vc-lbl">12ай</div></div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">🐢</div>
+      <div class="ic-body"><h4>БАЯУ СТАРТ — ҚАЛЫПТЫ</h4><p>Алғашқы 3–4 айда өсу көрінбеуі мүмкін. БАРЛЫҒЫНДА солай. Тоқтама.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🚀</div>
+      <div class="ic-body"><h4>6 АЙДАН КЕЙІН ЖЫЛДАМДАЙДЫ</h4><p>Алгоритм сені "таниды". Контентің ұша бастайды. 6 ай шыдасаң — жеңдің.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">💎</div>
+      <div class="ic-body"><h4>1 ЖЫЛ = ӨМІРЛІК ДАҒДЫ</h4><p>Үздіксіз 1 жыл жүргізген адам — ешқашан тоқтамайды. Бұл инвестиция.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 13 — МЕНТАЛИТЕТ
+══════════════════════════════════ -->
+<div class="slide" data-s="13">
+  <div class="pad">
+    <span class="tag tag-purple">МЕНТАЛИТЕТ</span>
+    <div class="big-h">ОЙЛАУДЫ<br><span class="grad2">ӨЗГЕРТ</span></div>
+    <div class="sub-text">Инстаграмда сәтсіздіктің 90% — ой бейнеде</div>
+    <div class="divider"></div>
+    <div class="ms-box ms-bad"><div class="ms-label">❌ ҚАТЕ ОЙ</div><div class="ms-text">"Мен 1000 подписчик жиймай реклама кім береді?"</div></div>
+    <div class="ms-arrow">↓</div>
+    <div class="ms-box ms-good"><div class="ms-label">✅ ДҰРЫС ОЙ</div><div class="ms-text">"100 адамға пайдалы болсам — сол 100 менің клиентім"</div></div>
+
+    <div class="ms-box ms-bad" style="margin-top:10px"><div class="ms-label">❌ ҚАТЕ ОЙ</div><div class="ms-text">"Менің постым аз лайк жиды — мен сәтсізмін"</div></div>
+    <div class="ms-arrow">↓</div>
+    <div class="ms-box ms-good"><div class="ms-label">✅ ДҰРЫС ОЙ</div><div class="ms-text">"Аналитика оқып, келесіні жақсартамын"</div></div>
+
+    <div class="ms-box ms-bad" style="margin-top:10px"><div class="ms-label">❌ ҚАТЕ ОЙ</div><div class="ms-text">"Идеал болмасам — бастамаймын"</div></div>
+    <div class="ms-arrow">↓</div>
+    <div class="ms-box ms-good" style="margin-bottom:0"><div class="ms-label">✅ ДҰРЫС ОЙ</div><div class="ms-text">"Бастай бер, жетілдіре бер. Іс барысында үйренесің"</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 14 — НЕГЕ ӨЗІНЕ ҰНАЙТЫНДЫ ТАНДАу
+══════════════════════════════════ -->
+<div class="slide" data-s="14">
+  <div class="pad">
+    <span class="tag tag-green">ШАРШАМАУ ЖОЛЫ</span>
+    <div class="big-h">ӨЗІҢЕ<br><span class="green">СҮЙІКТІ</span><br>БАҒЫТТЫ ТАНДа</div>
+    <div class="sub-text">Шаршамас үшін — жүрегіңе жақын нәрсені жүргіз</div>
+    <div class="divider"></div>
+    <div class="hbox hbox-green">
+      <div class="hbox-title" style="color:var(--green)">🤔 ӨЗІҢЕ 4 СҰРАҚ ҚОЙ:</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(18,194,107,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">1</div>
+          <span style="font-size:12px;font-weight:700;color:var(--black)">Бұл туралы 1 сағат үздіксіз айтуға болады ма?</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(18,194,107,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">2</div>
+          <span style="font-size:12px;font-weight:700;color:var(--black)">Адамдар сенен бұл туралы жиі сұрайды ма?</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(18,194,107,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">3</div>
+          <span style="font-size:12px;font-weight:700;color:var(--black)">5 жыл бойы бұл туралы жазғың келер ме?</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(18,194,107,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">4</div>
+          <span style="font-size:12px;font-weight:700;color:var(--black)">Адамдарға нақты пайда бере аласың ба?</span>
+        </div>
+      </div>
+    </div>
+    <div class="quote-box" style="margin-top:12px">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">Өзіне жат нәрсені алған адам — 3 айда тастайды. Жүрекпен жүргізген — жылдар бойы жалғастырады.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 15 — БІРДЕН АҚША КҮТПЕ
+══════════════════════════════════ -->
+<div class="slide" data-s="15">
+  <div class="pad">
+    <span class="tag tag-pink">МАҢЫЗДЫ ПСИХОЛОГИЯ</span>
+    <div class="big-h">БІРДЕН<br><span class="grad">АҚША</span><br>КҮТПЕ!</div>
+    <div class="sub-text">Инстаграм — 1 жылдық инвестиция, жылдам ақша емес</div>
+    <div class="divider"></div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:#ccc"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--gray)">1–2 АЙ</div><div class="tl-desc">Аккаунт, контент стилін орнату. Нолден өссің. Бұл қалыпты.</div><span class="tl-badge" style="background:rgba(225,48,108,0.1);color:var(--pink)">💸 Ақша жоқ — ҚАЛЫПТЫ</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--orange)"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--orange)">3–5 АЙ</div><div class="tl-desc">Аудитория сенімі қалыптасады. Алғашқы сұраулар мен DM-дар.</div><span class="tl-badge" style="background:rgba(247,119,55,0.1);color:var(--orange)">💛 Алғашқы 30–100К₸</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--green)">6–9 АЙ</div><div class="tl-desc">Тұрақты аудитория. Рекламалар жиілейді, сатулар өседі.</div><span class="tl-badge" style="background:rgba(18,194,107,0.1);color:var(--green)">💚 Ай сайын 100–500К₸</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--pink)"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--pink)">12 АЙ+</div><div class="tl-desc">Инстаграм — жалақыдан асатын табыс. Сен — бренд!</div><span class="tl-badge" style="background:var(--grad);color:white">🚀 500К – 5М₸/АЙ</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 16 — INSTAGRAM ФУНКЦИЯЛАРЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="16">
+  <div class="pad">
+    <span class="tag tag-purple">ІШКІ ФУНКЦИЯЛАР</span>
+    <div class="big-h">INSTAGRAM<br><span class="grad2">ІШКІ</span><br>МҮМКІНДІКТЕРІ</div>
+    <div class="divider"></div>
+    <div class="func-card">
+      <div class="fc-icon">🎬</div>
+      <div class="fc-body"><div class="fc-name">REELS</div><div class="fc-desc">15–90 сек видео. Жаңа аудиторияға жету үшін №1 инструмент. 2026-да AI editing кіріктірілді.</div><div class="fc-power" style="color:var(--pink)">⚡ ЕҢ ҚУАТТЫ ИНСТРУМЕНТ</div></div>
+    </div>
+    <div class="func-card">
+      <div class="fc-icon">⭕</div>
+      <div class="fc-body"><div class="fc-name">STORIES</div><div class="fc-desc">24 сағаттық контент. Опрос, сұрақ, реакция — аудиторияны белсенді ұстайды.</div><div class="fc-power" style="color:var(--orange)">💛 БАЙЛАНЫС ИНСТРУМЕНТІ</div></div>
+    </div>
+    <div class="func-card">
+      <div class="fc-icon">🔴</div>
+      <div class="fc-body"><div class="fc-name">LIVE (ТІКЕЛЕЙ ЭФИР)</div><div class="fc-desc">Аудиториямен тікелей диалог — сенімді ең жылдам түрде күшейтеді.</div><div class="fc-power" style="color:var(--green)">💚 СЕНІМ ТУДЫРАДЫ</div></div>
+    </div>
+    <div class="func-card">
+      <div class="fc-icon">📡</div>
+      <div class="fc-body"><div class="fc-name">BROADCAST CHANNEL</div><div class="fc-desc">2026 жаңалығы — жаппай хабарлама арнасы. VIP аудитория, эксклюзив контент, монетизация.</div><div class="fc-power" style="color:var(--blue)">💙 2026 МОНЕТИЗАЦИЯ</div></div>
+    </div>
+    <div class="func-card" style="margin:0">
+      <div class="fc-icon">⭐</div>
+      <div class="fc-body"><div class="fc-name">CLOSE FRIENDS</div><div class="fc-desc">Ақылы VIP контент. Айына тұрақты кіріс жолы — 2026 трендінің ерекше бағыты.</div><div class="fc-power" style="color:var(--purple)">💜 ТҰРАҚТЫ КІРІС</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 17 — АЛГОРИТМ СЫРЛАРЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="17">
+  <div class="pad">
+    <span class="tag tag-black">АЛГОРИТМ 2026</span>
+    <div class="big-h">IG АЛГОРИТМІ<br><span class="grad">НЕНІ</span><br>ЖАҚСЫ КӨРЕДІ?</div>
+    <div class="sub-text">2026 жылы Meta алгоритмі мүлдем жаңарды</div>
+    <div class="divider"></div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">💾</div>
+      <div class="ic-body"><h4>САҚТАУЛАР — ЕҢ МАҢЫЗДЫ</h4><p>"Кейін оқимын" деп сақтаған = алгоритмге АЛТЫН сигнал. Сақтауларыңды өсір.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🔄</div>
+      <div class="ic-body"><h4>РЕПОСТТАР — ВИРУСТЫ ТАРАТУ</h4><p>Достарына жіберу = тегін жарнама. Репост болатын контент жаса.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">⏱️</div>
+      <div class="ic-body"><h4>ҚАРАУ УАҚЫТЫ (WATCH TIME)</h4><p>50%+ соңына дейін қарасын = жақсы контент белгісі. Hook маңыздылығы осында.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">💬</div>
+      <div class="ic-body"><h4>КОММЕНТТЕР & ЖАУАПТАР</h4><p>Диалог = белсенділік. Алгоритм комментті лайктан жоғары бағалайды.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">🤖</div>
+      <div class="ic-body"><h4>AI КОНТЕНТКЕ PENALTY 2026</h4><p>100% AI генерациялаған контент — алгоритм төмендетеді. Шынайы адами контент — жеңеді.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 18 — ХЭШТЕГ
+══════════════════════════════════ -->
+<div class="slide" data-s="18">
+  <div class="pad">
+    <span class="tag tag-blue">ХЭШТЕГ СТРАТЕГИЯ</span>
+    <div class="big-h">ХЭШТЕГ &<br><span class="blue">ЖАЗБА</span><br>СТРАТЕГИЯСЫ</div>
+    <div class="divider"></div>
+    <div style="margin-bottom:14px">
+      <div style="font-family:'Unbounded',sans-serif;font-size:10px;font-weight:800;color:var(--gray);letter-spacing:1px;margin-bottom:10px">3 ДЕҢГЕЙ СТРАТЕГИЯСЫ:</div>
+      <div class="hbox hbox-green" style="margin-bottom:8px">
+        <div class="hbox-title" style="color:var(--green)">🟢 КІШКЕНТАЙ хэштег (1К–50К)</div>
+        <div class="hbox-text">4–5 дана. Нақты нише аудиториясы. Кіші = нақты = адал. ЕҢ ТИІМДІ.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
+          <span class="trend-pill" style="font-size:10px;background:rgba(18,194,107,0.1);color:var(--green)"><div class="tp-dot" style="background:var(--green)"></div>#алматыпсихолог</span>
+          <span class="trend-pill" style="font-size:10px;background:rgba(18,194,107,0.1);color:var(--green)"><div class="tp-dot" style="background:var(--green)"></div>#казакша_кенес</span>
+        </div>
+      </div>
+      <div class="hbox hbox-orange" style="margin-bottom:8px">
+        <div class="hbox-title" style="color:var(--orange)">🟡 ОРТА хэштег (50К–500К)</div>
+        <div class="hbox-text">5–7 дана. Нақты аудиторияға жетудің жолы. Осыған негізгі фокус.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
+          <span class="trend-pill" style="font-size:10px;background:rgba(247,119,55,0.1);color:var(--orange)"><div class="tp-dot" style="background:var(--orange)"></div>#lifestyle_kz</span>
+          <span class="trend-pill" style="font-size:10px;background:rgba(247,119,55,0.1);color:var(--orange)"><div class="tp-dot" style="background:var(--orange)"></div>#алматы</span>
+        </div>
+      </div>
+      <div class="hbox hbox-pink">
+        <div class="hbox-title" style="color:var(--pink)">🔴 ҮЛКЕН хэштег (1М+)</div>
+        <div class="hbox-text">2–3 дана ғана. Үлкен бәсекелестік. Жылдам батып кетесің.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📝 CAPTION (ЖАЗБА) ФОРМУЛАСЫ</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+        <div style="display:flex;gap:8px;align-items:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;color:var(--pink)">1</span><span style="font-size:12px;font-weight:700">Hook сөйлем — тоқтату</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;color:var(--orange)">2</span><span style="font-size:12px;font-weight:700">Пайдалы контент / тізім</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;color:var(--green)">3</span><span style="font-size:12px;font-weight:700">Сұрақ + CTA (комментте жаз!)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 19 — STORIES СТРАТЕГИЯ
+══════════════════════════════════ -->
+<div class="slide" data-s="19">
+  <div class="pad">
+    <span class="tag tag-purple">STORIES 2026</span>
+    <div class="big-h">STORIES<br><span class="grad2">СТРАТЕГИЯСЫ</span></div>
+    <div class="sub-text">Күнделікті Stories — аудиторияны "жылы" ұстаудың жолы</div>
+    <div class="divider"></div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">📊</div>
+      <div class="ic-body"><h4>САУАЛНАМА (POLL)</h4><p>Екі нұсқа ұсын. Белсенділікті 3x арттырады. "А немесе Ә?" — оңай бірақ тиімді.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">❓</div>
+      <div class="ic-body"><h4>СҰРАҚ СТИКЕРІ (Q&A)</h4><p>"Маған сұрақ қой" стикері → жауаптарды рилс немесе Stories-те айт → жаңа контент.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">🎁</div>
+      <div class="ic-body"><h4>БЭК-СТЕЙДЖ (КУЛИСА)</h4><p>Жұмыс процесіңді, дайындалуды, қателерді көрсет. Шынайылық = сенім.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🔗</div>
+      <div class="ic-body"><h4>СІЛТЕМЕ + CTA</h4><p>Рилске, постқа, сатылымға жіберу. 2026-да Stories Link — негізгі сату механизмі.</p></div>
+    </div>
+    <div class="hbox hbox-black" style="margin-top:4px">
+      <div class="hbox-title">📅 КҮНДЕЛІКТІ STORIES ЖОСПАРЫ</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,0.6)">Таңертең 8–9</span><span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:white">1–2 Stories</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,0.6)">Күндіз 12–14</span><span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:white">1 Stories</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,0.6)">Кешке 18–21</span><span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:white">2–3 Stories</span></div>
+        <div style="height:1px;background:rgba(255,255,255,0.1)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,0.6)">БАРЛЫҒЫ</span><span style="font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5–7/күн</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 20 — НЕГЕ ТАСТАЙДЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="20">
+  <div class="pad">
+    <span class="tag tag-pink">ПСИХОЛОГИЯ</span>
+    <div class="big-h">НЕГЕ<br><span class="grad">АДАМДАР</span><br>ТАСТАЙДЫ?</div>
+    <div class="sub-text">5 негізгі себеп — және олардың шешімі</div>
+    <div class="divider"></div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ СЕБЕП 1</div><div class="cmp-text">Өзіне жат нәрсені алып, тез суу</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ШЕШІМ</div><div class="cmp-text">Алдымен өзіңе ұнайтын бағытты ғана жүргіз</div></div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ СЕБЕП 2</div><div class="cmp-text">Подписчик жиналмай жатыр деген күдік</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ШЕШІМ</div><div class="cmp-text">Алғашқы 3 айда сапаны бақыла, өсуді емес</div></div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ СЕБЕП 3</div><div class="cmp-text">Бірден ақша алып келетін нәрсені күту</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ШЕШІМ</div><div class="cmp-text">Инстаграм — ұзақ мерзімді инвестиция</div></div>
+    </div>
+    <div class="cmp-row" style="margin-bottom:0">
+      <div class="cmp-bad"><div class="cmp-label">❌ СЕБЕП 4</div><div class="cmp-text">"Идеал бола алмасам бастамаймын"</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ШЕШІМ</div><div class="cmp-text">Бастай бер. Бірінші видео мінсіз болмайды.</div></div>
+    </div>
+    <div class="hbox hbox-pink" style="margin-top:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div><div class="hbox-title" style="color:var(--pink)">СТАТИСТИКА</div><div class="hbox-text">6 айда тастайтындар</div></div>
+        <div style="font-family:'Unbounded',sans-serif;font-size:40px;font-weight:900;color:var(--pink)">95%</div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;font-weight:700;color:var(--black)">Сен ол 5% болсаң — жеңдің ✅</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 21 — САПАЛЫ КОНТЕНТ
+══════════════════════════════════ -->
+<div class="slide" data-s="21">
+  <div class="pad">
+    <span class="tag tag-green">АЛТЫН ФОРМУЛА</span>
+    <div class="big-h">АДАМДАРҒА<br><span class="green">КӨМЕКТеС</span><br>→ АҚША</div>
+    <div class="sub-text">Инстаграмда ақша табудың шынайы формуласы</div>
+    <div class="divider"></div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--green)">01</div>
+      <div class="step-body"><h4>🎯 НАҚТЫ МӘСЕЛЕНІ ШЕШ</h4><p>"Бүгін бірдеңе үйрендім" деп кеткізетін контент жаса. Адам қайта оралады.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--green)">02</div>
+      <div class="step-body"><h4>📖 ШЫНАЙЫ ТАРИХЫҢДЫ АЙТ</h4><p>"Мен де солай болдым" деген сезімді тудыр. Аутентичность 2026-да — №1 тренд.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:var(--green)">03</div>
+      <div class="step-body"><h4>💡 ДАЙЫН ЖАУАП БЕР</h4><p>Адам іздемей сенде табуы керек. Google-дан жақсырақ болуың — мақсатың.</p></div>
+    </div>
+    <div class="step-item" style="border:none">
+      <div class="step-num" style="background:var(--green)">04</div>
+      <div class="step-body"><h4>🔁 САҚТАУҒА ЛАЙЫҚ БОЛ</h4><p>"Кейін оқимын" деп сақтататын контент — алгоритм үшін алтын, сен үшін өсу.</p></div>
+    </div>
+    <div class="quote-box">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">Ақшаны мақсат ете алмайсың — ол нәтиже. Мақсатың: адамдарға пайдалы болу. Ақша өздігінен тартылады.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 22 — АНАЛИТИКА
+══════════════════════════════════ -->
+<div class="slide" data-s="22">
+  <div class="pad">
+    <span class="tag tag-blue">БӨЛІМ 4 · АНАЛИТИКА</span>
+    <div class="big-h">АНАЛИТИКА<br><span class="blue">ОҚУ</span><br>КЕРЕК</div>
+    <div class="sub-text">Аналитикасыз контент жасау — соқыр жүру</div>
+    <div class="divider"></div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">📊</div>
+      <div class="ic-body"><h4>REACH (ЖЕТУ)</h4><p>Неше бірегей адам көрді. Бұл — өсуіңнің №1 метрикасы. Апта сайын өссін.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">💾</div>
+      <div class="ic-body"><h4>SAVES (САҚТАУЛАР) ⚡</h4><p>ЕҢ МАҢЫЗДЫ метрика 2026-да. "Кейін оқимын" деп сақтаған = адал аудиторияң.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🔄</div>
+      <div class="ic-body"><h4>SHARES (РЕПОСТТАР)</h4><p>Достарына жіберу = тегін жарнама + алгоритм вирус белгісі.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">⏱️</div>
+      <div class="ic-body"><h4>WATCH TIME</h4><p>Видеоны неше % адам соңына дейін қарады. 50%+ = жақсы контент белгісі.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(131,58,180,0.1)">👥</div>
+      <div class="ic-body"><h4>AUDIENCE INSIGHTS</h4><p>Аудиторияң кімдер? Жасы, қаласы, белсенді уақыты — осыған сай жарияла.</p></div>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title" style="color:var(--blue)">📌 АПТА САЙЫН ЖАСА</div>
+      <div class="hbox-text">Аналитиканы тексер → ең жақсы контентті анықта → сол форматты қайтала → өс.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 23 — КОЛЛАБОРАЦИЯ
+══════════════════════════════════ -->
+<div class="slide" data-s="23">
+  <div class="pad">
+    <span class="tag tag-orange">БІРГЕ ӨСУ</span>
+    <div class="big-h">КОЛЛАБОРАЦИЯ<br><span class="orange">= ЕКІ ЕСЕСЕ</span><br>ТЕЗІРЕК</div>
+    <div class="divider"></div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">🤝</div>
+      <div class="ic-body"><h4>ҰҚСАС НИШЕ — ДОСТАСУ</h4><p>Сенімен бір бағыттағы, бірақ бәсекелес емес аккаунттармен байланыс. Бірге өсесіңдер.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">🎯</div>
+      <div class="ic-body"><h4>COLLAB ПОСТ (2026 НЕ ЖАҢА)</h4><p>2026-да Collab посттар рилс форматтарын қолдайды. Екі аудиторияны біріктіреді.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">📣</div>
+      <div class="ic-body"><h4>ВЗАИМНЫЙ ПИАР (ВП)</h4><p>Бір-бірің туралы жазу. Ақысыз жарнама. Ниша бойынша ортақ аудитория.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">🎤</div>
+      <div class="ic-body"><h4>JOINT LIVE (БІРГЕ ЭФИР)</h4><p>Екеуің бірге тікелей эфир — екі аудиторияны бір уақытта тартасыңдар.</p></div>
+    </div>
+    <div class="big-stat" style="margin-top:8px">
+      <div class="bsn">2x</div>
+      <div class="bsl">Коллаборация жасаған аккаунттар — 2 есе тезірек өседі</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 24 — КОНТЕНТ ЖОСПАРЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="24">
+  <div class="pad">
+    <span class="tag tag-green">ЖОСПАР</span>
+    <div class="big-h">АПТАЛЫҚ<br><span class="green">КОНТЕНТ</span><br>ЖОСПАРЫ</div>
+    <div class="divider"></div>
+    <div class="step-item">
+      <div class="step-num" style="background:#111;font-size:11px">ДС</div>
+      <div class="step-body"><h4>БІЛІМДІЛІК РИЛС</h4><p>"5 кеңес" немесе "Білмеген нәрселерің" форматы. Сақтауға итермелейді.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:#111;font-size:11px">СС</div>
+      <div class="step-body"><h4>STORIES + ENGAGEMENT</h4><p>Опрос, сұрақ стикері. Аудиторияны белсендіру күні.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:#111;font-size:11px">СР</div>
+      <div class="step-body"><h4>ТАРИХНАМАЛЫҚ РИЛС</h4><p>Өз тәжірибеңнен. "Менің де солай болды..." форматы. Эмоциялық байланыс.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:#111;font-size:11px">БС</div>
+      <div class="step-body"><h4>НӘТИЖЕ / КЕЙС ПОСТ</h4><p>Клиент нәтижесі, алдан-соңғы, жетістік. Сенімді тудырады.</p></div>
+    </div>
+    <div class="step-item">
+      <div class="step-num" style="background:#111;font-size:11px">ЖМ</div>
+      <div class="step-body"><h4>ТРЕНДТІ РИЛС</h4><p>Апталық тренд дыбыс немесе формат. Алгоритм тренд контентті шығарады.</p></div>
+    </div>
+    <div class="step-item" style="border:none">
+      <div class="step-num" style="background:#111;font-size:11px">СБ</div>
+      <div class="step-body"><h4>ЖЕКЕ ТАРИХ / БЭКСТЕЙДЖ</h4><p>Өзіңнің өміріңді, процесіңді, хоббиіңді көрсет. Адамдарды жақындатады.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 25 — КАМЕРАДАН ҚОРЫҚПА
+══════════════════════════════════ -->
+<div class="slide" data-s="25">
+  <div class="pad">
+    <span class="tag tag-orange">КАМЕРА ҚОРҚЫНЫШЫ</span>
+    <div class="big-h">КАМЕРАДАН<br><span class="orange">ҚОРЫҚТЫҢ</span><br>МА? ОҚЫ</div>
+    <div class="divider"></div>
+    <div class="hbox hbox-orange">
+      <div class="hbox-title" style="color:var(--orange)">😰 → 😎 ШЫНАЙЫ ЖОЛДАМА</div>
+      <div class="hbox-text">Барлық үлкен блогерлердің алғашқы видеолары ҚОРҚЫНЫШТЫ болды. Бастаудың өзі — жеңіс.</div>
+    </div>
+    <div class="icon-card" style="margin-top:8px">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">📱</div>
+      <div class="ic-body"><h4>АЛДЫМЕН КАМЕРАСЫЗ БАСТа</h4><p>Экран жазбасы, мәтіндік рилс, немесе тек дауысыңмен. Бет-алпетің болмай-ақ бастауға болады.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🔁</div>
+      <div class="ic-body"><h4>30 РИЛСТАН КЕЙІН ӨЗГЕРЕСІҢ</h4><p>30 видео жасаған адам камерадан қорықпайды. Бұл — ғылыми дәлелденген факт.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">💬</div>
+      <div class="ic-body"><h4>АУДИТОРИЯ МАЗМҰНДЫ ТЫҢДАЙДЫ</h4><p>Адамдар пайдалы ақпарат үшін кіреді. Сыртқы келбетің маңызды емес — ОЙЫңА ФОКУСТЕ.</p></div>
+    </div>
+    <div class="big-stat" style="margin-top:8px">
+      <div class="bsn">30</div>
+      <div class="bsl">Рилс жасаған соң — камера досыңа айналады</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 26 — ВИДЕО САПАСЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="26">
+  <div class="pad">
+    <span class="tag tag-black">ТЕХНИКАЛЫқ</span>
+    <div class="big-h">ВИДЕО<br><span class="grad">САПАСЫ</span><br>МАҢЫЗДЫ МА?</div>
+    <div class="divider"></div>
+    <div class="cmp-row">
+      <div class="cmp-bad"><div class="cmp-label">❌ НАШАР</div><div class="cmp-text">Сілкіленген видео, дыбыс жок</div></div>
+      <div class="cmp-good"><div class="cmp-label">✅ ЖЕТКІЛІКТІ</div><div class="cmp-text">Тік ұстаған телефон + жарық</div></div>
+    </div>
+    <div class="icon-card" style="margin-top:4px">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">🎤</div>
+      <div class="ic-body"><h4>ДЫБЫС — №1 МАҢЫЗДЫ</h4><p>Айқын дыбыс. Арзан петличка микрофон — студиодан жақсы нәтиже береді.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">💡</div>
+      <div class="ic-body"><h4>ЖАРЫҚ — №2 МАҢЫЗДЫ</h4><p>Табиғи жарық (терезеге қарай) немесе ring light. Қараңғы видео адамды тоқтатпайды.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">✂️</div>
+      <div class="ic-body"><h4>МОНТАЖ — CapCut ЖЕТКІЛІКТІ</h4><p>Тегін, оңай, AI функциялары кіріктірілген. Үнсіздікті кес, қарқынды бол.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">🧠</div>
+      <div class="ic-body"><h4>МАЗМҰН > САПА</h4><p>iPhone 12 + жақсы жарық + керемет мазмұн = Samsung S25 Ultra + студия + бос сөз.</p></div>
+    </div>
+    <div class="hbox hbox-black">
+      <div class="hbox-title">⚡ АЛТЫН ЕРЕЖЕ</div>
+      <div class="hbox-text">Жетілмеген бүгін > мінсіз ертең. Шығарып жіберу — ең маңызды қадам.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 27 — ШАРШАУДАН ҚОРҒАНУ
+══════════════════════════════════ -->
+<div class="slide" data-s="27">
+  <div class="pad">
+    <span class="tag tag-green">BURNOUT ЖОҚ</span>
+    <div class="big-h">ШАРШАУДАН<br><span class="green">ҚОРҒАНУ</span><br>ЖОЛДАРЫ</div>
+    <div class="divider"></div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(18,194,107,0.1)">📦</div>
+      <div class="ic-body"><h4>КОНТЕНТ БАНКІ ЖАСА</h4><p>Бір күнде 5–10 видео түсіріп, 2 апталық запас дайында. Стрессіз жариялайсың.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(64,93,230,0.1)">📅</div>
+      <div class="ic-body"><h4>КЕСТЕ ҰСТА</h4><p>Апта сайын белгілі күндерде жарияла. Хаотикалық жариялау шаршатады.</p></div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background:rgba(247,119,55,0.1)">🔋</div>
+      <div class="ic-body"><h4>ДЕМАЛЫС РҰҚСАТ</h4><p>Апта сайын 1–2 күн демал. Инстаграм — марафон, спринт емес. Ұзаққа шыда.</p></div>
+    </div>
+    <div class="icon-card" style="border:none">
+      <div class="icon-box" style="background:rgba(225,48,108,0.1)">🎯</div>
+      <div class="ic-body"><h4>НЕГЕ ЖАСАЙТЫНЫҢДЫ ЕСТЕ ҰСТА</h4><p>Пайдалы болу, дамыту, болашаққа инвестиция. Мақсатың — ынтаның отыны.</p></div>
+    </div>
+    <div class="quote-box">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">Үздіксіз кіші еңбек — ұлы нәтижеге апарады. Бір жылдан кейін өзіңді танымайсың.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 28 — ТҰРАҚТЫ ЖАРИЯЛАУ
+══════════════════════════════════ -->
+<div class="slide" data-s="28">
+  <div class="pad">
+    <span class="tag tag-pink">CONSISTENCY</span>
+    <div class="big-h">ҮЗДІКСІЗ<br><span class="grad">ЖАРИЯЛАУ</span><br>= ӨСІМ</div>
+    <div class="divider"></div>
+    <div style="background:var(--lightgray);border-radius:16px;overflow:hidden;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #e8e8e8">
+        <span style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:800">ҚАРАША 2026</span>
+        <span style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:800;color:var(--green)">87% ТҰРАҚТЫ</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:10px;font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;color:var(--gray);text-align:center">
+        <span>ДС</span><span>СС</span><span>СР</span><span>БС</span><span>ЖМ</span><span>СБ</span><span>ЖС</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:0 10px 10px">
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">1</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">2</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">3</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">4</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">5</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">6</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(225,48,108,0.15);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--pink)">7</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">8</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">9</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">10</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(225,48,108,0.15);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--pink)">11</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">12</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">13</div>
+        <div style="aspect-ratio:1;border-radius:5px;background:rgba(18,194,107,0.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:var(--green)">14</div>
+      </div>
+      <div style="display:flex;gap:14px;padding:4px 14px 12px;font-size:10px;color:var(--gray)">
+        <div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:3px;background:rgba(18,194,107,0.3)"></div>Жарияланды</div>
+        <div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:3px;background:rgba(225,48,108,0.2)"></div>Демалыс</div>
+      </div>
+    </div>
+    <div class="hbox hbox-pink">
+      <div class="hbox-title" style="color:var(--pink)">🔑 ЕРЕЖЕ</div>
+      <div class="hbox-text">Күнделікті жариялауды мақсат етпе — АПТА САЙЫН тұрақты жариялауды мақсат ет. Апта сайын 4–5 рилс > тұрақсыз күнделікті контент.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 29 — 1 ЖЫЛДЫҚ ЖОЛ КАРТАСЫ
+══════════════════════════════════ -->
+<div class="slide" data-s="29">
+  <div class="pad">
+    <span class="tag tag-black">ЖОЛ КАРТАСЫ</span>
+    <div class="big-h">1 ЖЫЛДЫҚ<br><span class="grad">ЖОЛ</span><br>КАРТАСЫ</div>
+    <div class="divider"></div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:#ccc"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--gray)">0–2 АЙ · ДАЙЫНДЫҚ</div><div class="tl-desc">Аккаунт аш, бағытты анықта, алғашқы 10 рилс жаса. Идеал болуды күтпе. Бірден іске кіріс.</div><span class="tl-badge" style="background:#f0f0f0;color:var(--gray)">Бастау</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--orange)"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--orange)">3–5 АЙ · ӨСУ</div><div class="tl-desc">Апта сайын 4–5 рилс. Аналитика оқы, форматты жетілдір. Алғашқы 1000 фоллоуер.</div><span class="tl-badge" style="background:rgba(247,119,55,0.1);color:var(--orange)">1К+ фоллоуер</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-line"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--green)">6–9 АЙ · МОНЕТИЗАЦИЯ</div><div class="tl-desc">Алғашқы рекламалар, коллаборациялар. 5К–15К фоллоуер. Табыс басталады.</div><span class="tl-badge" style="background:rgba(18,194,107,0.1);color:var(--green)">Бірінші рекл.</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--pink)"></div></div>
+      <div class="tl-body"><div class="tl-month" style="color:var(--pink)">10–12 АЙ · БИЗНЕС</div><div class="tl-desc">Курс, коучинг немесе өнім сат. Инстаграм — негізгі табыс. 20К–100К+ фоллоуер.</div><span class="tl-badge" style="background:var(--grad);color:white">🚀 Жалақыдан асу</span></div>
+    </div>
+    <div class="hbox hbox-black" style="margin-top:8px">
+      <div class="hbox-title">💡 ЕСТЕ ҰСТА</div>
+      <div class="hbox-text">Бастапқы қадам — ең маңызды. Бүгін аккаунт аш. Бүгін бірінші рилс жаса. Кейінге қалдырма.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  SLIDE 30 — ФИНАЛ
+══════════════════════════════════ -->
+<div class="slide" data-s="30">
+  <div class="final-top">
+    <span class="final-emoji">🚀</span>
+    <div class="final-h">ДАЙЫНСЫҢ<br><span class="cg">БАСТАУҒА!</span></div>
+  </div>
+  <div class="final-body">
+    <div class="final-stats">
+      <div class="fs-item"><div class="fs-num">1</div><div class="fs-lbl">Аккаунт ашу — бүгін</div></div>
+      <div class="fs-item"><div class="fs-num">30</div><div class="fs-lbl">Рилс жасау — 1 айда</div></div>
+      <div class="fs-item"><div class="fs-num">1ЖЫЛ</div><div class="fs-lbl">Үздіксіз жұмыс</div></div>
+    </div>
+    <div class="hbox hbox-green" style="margin-bottom:10px">
+      <div class="hbox-title" style="color:var(--green)">✅ БҮГІН ЖАСАЙТЫНЫҢЫЗ</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:6px">
+        <div style="display:flex;gap:8px;align-items:center"><span style="color:var(--green)">☐</span><span style="font-size:12px;font-weight:700">Кәсіби аккаунт аш</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="color:var(--green)">☐</span><span style="font-size:12px;font-weight:700">Бионы жаз (формула бойынша)</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="color:var(--green)">☐</span><span style="font-size:12px;font-weight:700">Бірінші рилс түсір (мінсіз болмасын)</span></div>
+        <div style="display:flex;gap:8px;align-items:center"><span style="color:var(--green)">☐</span><span style="font-size:12px;font-weight:700">Жарияла — 1 жылдан кейін рақмет айтасың</span></div>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="goTo(1)">🔄 ҚАЙТА БАСТАН</button>
+    <div class="final-note">📌 Осы гидты достарыңа жіберіп жақсылық жаса!</div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="navrow">
+  <button class="nbtn nbtn-prev" onclick="prev()">← АРТҚА</button>
+  <button class="nbtn nbtn-next" onclick="next()">АЛҒА →</button>
+</div>
+
+<script>
+const TOTAL = 30;
+let cur = 1;
+
+// Build progress
+const pw = document.getElementById('pw');
+for (let i = 1; i <= TOTAL; i++) {
+  const s = document.createElement('div');
+  s.className = 'pseg' + (i < cur ? ' done' : '');
+  s.id = 'ps' + i;
+  if (i === cur) { s.classList.add('active'); s.innerHTML = '<div class="pfill"></div>'; }
+  s.addEventListener('click', () => goTo(i));
+  pw.appendChild(s);
+}
+
+function updateUI() {
+  for (let i = 1; i <= TOTAL; i++) {
+    const s = document.getElementById('ps' + i);
+    s.className = 'pseg';
+    s.innerHTML = '';
+    if (i < cur) s.classList.add('done');
+    if (i === cur) { s.classList.add('active'); s.innerHTML = '<div class="pfill"></div>'; }
+  }
+  document.getElementById('ctr').textContent = cur + '/' + TOTAL;
+}
+
+function showSlide(n) {
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  const t = document.querySelector('[data-s="' + n + '"]');
+  if (t) t.classList.add('active');
+  updateUI();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goTo(n) { cur = Math.max(1, Math.min(TOTAL, n)); showSlide(cur); }
+function next() { if (cur < TOTAL) goTo(cur + 1); }
+function prev() { if (cur > 1) goTo(cur - 1); }
+
+// Swipe
+let sx = 0, sy = 0;
+document.querySelector('.wrap').addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+document.querySelector('.wrap').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - sx;
+  const dy = e.changedTouches[0].clientY - sy;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+}, { passive: true });
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prev();
+});
+
+showSlide(1);
+</script>
+</body>
+</html>
